@@ -34,6 +34,7 @@ namespace AdventOfCode2022
             Console.WriteLine("--- Solution Day 3 ---");
             LogicDay3 logicDay3 = new LogicDay3();
             Console.WriteLine("Priority sum of all items: " + logicDay3.CalculateSumOfPriorities());
+            Console.WriteLine("Priority sum of all Elf groups: " + logicDay3.GetElfBadge());
             Console.WriteLine("--- End of Day 3 ---");
             
 #elif DAY4

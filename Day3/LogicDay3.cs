@@ -80,4 +80,35 @@ public class LogicDay3
 
         return prioritySum;
     }
+
+    public int GetElfBadge()
+    {
+        int prioritySum = 0;
+
+        for (int i = 0; i < Rucksacks.Count-1; i=i+3)
+        {
+            var rucksack1Array = Rucksacks[i].RucksackItems.ToCharArray();
+            var rucksack2Array = Rucksacks[i+1].RucksackItems.ToCharArray();
+            var rucksack3Array = Rucksacks[i+2].RucksackItems.ToCharArray();
+            
+            var sameLetterArray1 = rucksack1Array.Intersect(rucksack2Array);
+            var sameLetterArray2 = rucksack2Array.Intersect(rucksack3Array);
+
+            var resultLetterArray = sameLetterArray1.Intersect(sameLetterArray2);
+            
+            int index = resultLetterArray.First();
+            if (index > 96)
+            {
+                index -= 96;
+            }
+            else
+            {
+                index -= 38;
+            }
+
+            prioritySum += index;
+        }
+
+        return prioritySum;
+    }
 }
